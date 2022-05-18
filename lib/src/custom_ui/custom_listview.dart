@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:loginform/src/AppColors/colors.dart';
 
 import '../pages/detailed_page.dart';
 
@@ -31,7 +32,7 @@ class CustomListView extends StatelessWidget {
                 img,
               )),
           borderRadius: BorderRadius.circular(15),
-          //border: Border.all(color: Colors.black38)
+          //border: Border.all(AppColors: Colors.black38)
         ),
         height: 200,
         width: 200,
@@ -42,13 +43,14 @@ class CustomListView extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Text(
               title,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+              style:  TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.colors.white,
             ),
           ),
         ),
       ),
+    )
     );
   }
 }

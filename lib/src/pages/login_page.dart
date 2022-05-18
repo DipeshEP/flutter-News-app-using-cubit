@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:loginform/src/AppColors/colors.dart';
 import 'package:loginform/src/pages/home_screen.dart';
 
 
@@ -8,8 +10,8 @@ class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
-var pswd;
-var emil;
+// var pswd;
+// var email;
 Widget buildEmail(){
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,18 +19,18 @@ Widget buildEmail(){
       Text(
         'Email',
         style: TextStyle(
-            color: Colors.white,
+            color: AppTheme.colors.white,
             fontSize: 16,
             fontWeight: FontWeight.bold
         ),
       ),
-      SizedBox( height: 10,),
+      const SizedBox( height: 10,),
       Container(
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppTheme.colors.white,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -37,14 +39,14 @@ Widget buildEmail(){
             ]
         ),
         height: 60,
-        child: TextField(
+        child: const TextField(
 
-          key: emil,
+         // key: email,
           keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
+          style:  TextStyle(
               color: Colors.black87
           ),
-          decoration: InputDecoration(
+          decoration:  InputDecoration(
               border:InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14),
               prefixIcon: Icon(
@@ -65,7 +67,7 @@ Widget buildPassword(){
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text(
+      const Text(
         'password',
         style: TextStyle(
             color: Colors.white,
@@ -73,13 +75,13 @@ Widget buildPassword(){
             fontWeight: FontWeight.bold
         ),
       ),
-      SizedBox( height: 10,),
+      const SizedBox( height: 10,),
       Container(
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -88,13 +90,13 @@ Widget buildPassword(){
             ]
         ),
         height: 60,
-        child: TextField(
-          key: pswd,
+        child: const TextField(
+        //  key: pswd,
           obscureText: true,
           style: TextStyle(
               color: Colors.black87
           ),
-          decoration: InputDecoration(
+          decoration:  InputDecoration(
               border:InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14),
               prefixIcon: Icon(
@@ -113,7 +115,7 @@ Widget buildPassword(){
 }
 Widget buildButton(context){
   return Container(
-    padding: EdgeInsets.symmetric(vertical: 25),
+    padding: const EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
@@ -126,7 +128,7 @@ Widget buildButton(context){
         Navigator.pushReplacement(
              context,
             MaterialPageRoute(builder: (context){
-              return HomeScreen();}),
+              return const HomeScreen();}),
           );
 
       /*  }
@@ -136,7 +138,7 @@ Widget buildButton(context){
 
       },
 
-      child: Text(
+      child:const  Text(
         "Login",
         style: TextStyle(
           color: Color(0xff5ac18e),
@@ -154,19 +156,25 @@ class _LoginState extends State<Login> {
     return Scaffold(
 
        body: Container(
+
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0xff5ac18e),
-                    Color(0xcc5ac18e),
+                    AppTheme.colors.loginpage,
+                    AppTheme.colors.loginpage1,
+                          AppTheme.colors.loginpage2,
+                    AppTheme.colors.loginpage3,
+                    AppTheme.colors.loginpage4,
+                    AppTheme.colors.loginpage5,
+
                   ]
               )
           ),
           child: SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
-            padding: EdgeInsets.symmetric(
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding:const  EdgeInsets.symmetric(
               horizontal: 25,
               vertical: 120,
             ),
@@ -176,16 +184,16 @@ class _LoginState extends State<Login> {
                 Text(
                   "Sign In",
                   style: TextStyle(
-                      color: Colors.white,
+                      color: AppTheme.colors.white,
                       fontSize: 40,
                       fontWeight: FontWeight.bold
                   ),
                 ),
-                SizedBox(height: 50,),
+               const  SizedBox(height: 50,),
                 buildEmail(),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 buildPassword(),
-                SizedBox(height: 25,),
+                const SizedBox(height: 25,),
                 buildButton(context)
               ],
             ),

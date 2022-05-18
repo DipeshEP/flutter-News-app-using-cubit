@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:loginform/src/AppColors/colors.dart';
 
 import '../pages/detailed_page.dart';
 
@@ -31,7 +32,7 @@ class CustomGridView extends StatelessWidget {
         image: NetworkImage(
         img )),
         borderRadius: BorderRadius.circular(5),
-        color: Colors.black),
+        color: AppTheme.colors.bgcolor),
         ),
      ),
   //  ),

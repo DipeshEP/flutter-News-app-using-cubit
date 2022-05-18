@@ -4,9 +4,7 @@ import 'package:loginform/src/models/user.dart';
 
 
 class DetailedPage extends StatefulWidget {
-   DetailedPage( {Key? key}) : super(key: key) {
-
-   }
+   DetailedPage( {Key? key}) : super(key: key) ;
 
   @override
   State<DetailedPage> createState() => _DetailedPageState();
@@ -22,7 +20,11 @@ class _DetailedPageState extends State<DetailedPage> {
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-
+             // shape:const  RoundedRectangleBorder(
+             //   borderRadius: BorderRadius.vertical(
+             //     bottom: Radius.circular(40)
+             //   )
+             // ),
               pinned: true,
               stretch: true,
               expandedHeight: 200,
@@ -57,7 +59,7 @@ class _DetailedPageState extends State<DetailedPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Text(article.description??'',style:TextStyle(fontSize: 18),),
+                    child: Text(article.description??'',style:const TextStyle(fontSize: 18),),
                   )
                 ],
               ),

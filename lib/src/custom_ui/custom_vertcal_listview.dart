@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:loginform/src/AppColors/colors.dart';
 
 import '../pages/detailed_page.dart';
 
@@ -17,6 +18,7 @@ class CustomVerticalListView extends StatelessWidget {
       padding: const EdgeInsets.all(5.0),
       child: Card(
         child: ListTile(
+          tileColor:AppTheme.colors.tileColor,
             leading: Hero(
               tag: img,
               child: CircleAvatar(
@@ -28,13 +30,17 @@ class CustomVerticalListView extends StatelessWidget {
             title: Text(
               title,
               maxLines: 2,
-              style: const TextStyle(
+              style:  TextStyle(
+                color: AppTheme.colors.white,
                   fontWeight: FontWeight.bold,
               ),
             ),
             subtitle: Text(
               description,
               maxLines: 2,
+              style: TextStyle(
+                  color: AppTheme.colors.white
+              ),
             ),
             onTap: () {
              Navigator.push(context, MaterialPageRoute(settings: RouteSettings(arguments: arguments),
