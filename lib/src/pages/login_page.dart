@@ -115,6 +115,7 @@ Widget buildPassword(){
 }
 Widget buildButton(context){
   return Container(
+    height: 100,
     padding: const EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
     child: ElevatedButton(
@@ -154,7 +155,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+   backgroundColor: Colors.white70,
        body: Container(
 
           decoration: BoxDecoration(
@@ -172,12 +173,8 @@ class _LoginState extends State<Login> {
                   ]
               )
           ),
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            padding:const  EdgeInsets.symmetric(
-              horizontal: 25,
-              vertical: 120,
-            ),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
